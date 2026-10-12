@@ -1,39 +1,36 @@
+
 # 📊 Sales Customer Analytics
 
-A data analytics project that analyzes sales, customers, products, discounts, regions, and profitability using **Python, Pandas, Matplotlib, MySQL, and SQL**.
+An end-to-end data analytics project analyzing sales performance, customer behavior, product trends, regional performance, discounts, and profitability using **Python, Pandas, MySQL, SQL, and Power BI**.
 
 The project follows a complete data analytics workflow:
 
-**Data → Cleaning → Analysis → SQL → Visualization → Business Insights**
-
----
+**Data → Cleaning → EDA → SQL Analysis → Visualization → Power BI Dashboard → Business Insights**
 
 ## 🎯 Project Objective
 
-The main objective of this project is to analyze sales data and identify meaningful business insights related to:
+The objective is to analyze sales data and identify meaningful business insights related to:
 
 - Sales and profit performance
 - Customer behavior
 - Product performance
 - Category and sub-category performance
-- Regional sales
-- Discount and profitability
+- Regional sales and profitability
+- Discounts and profit margins
 - Monthly sales trends
-
----
 
 ## 🛠️ Technologies Used
 
-- **Python**
-- **Pandas**
-- **NumPy**
-- **Matplotlib**
-- **MySQL**
-- **SQL**
-- **Jupyter Notebook**
-- **VS Code**
-
----
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- MySQL
+- SQL
+- Microsoft Power BI
+- DAX
+- Jupyter Notebook
+- VS Code
 
 ## 📂 Project Structure
 
@@ -62,12 +59,10 @@ Sales-Customer-Analytics/
 ├── sql/
 │   └── sales_analysis.sql
 │
-├── .gitignore
+├── Sales_Customer_Analytics_Dashboard.pbix
 ├── README.md
 └── requirements.txt
 ```
-
----
 
 ## 📊 Dataset
 
@@ -75,24 +70,18 @@ The dataset contains **10,194 sales records** and **21 original columns**.
 
 It includes information about:
 
-- Orders
-- Customers
-- Products
-- Categories
+- Orders and customers
+- Products and categories
 - Regions
-- Sales
-- Quantity
-- Discounts
-- Profit
+- Sales and quantity
+- Discounts and profit
 - Order and shipping dates
 
 Additional date-based features were created during the analysis.
 
----
-
 ## 🧹 Data Cleaning
 
-The data cleaning process was performed using Pandas.
+Data cleaning was performed using Pandas.
 
 ### Main Steps
 
@@ -104,7 +93,7 @@ The data cleaning process was performed using Pandas.
 - Created Month Name
 - Created Year-Month for time-based analysis
 
-### Data Quality
+### Data Quality Summary
 
 | Metric | Value |
 |---|---:|
@@ -113,15 +102,9 @@ The data cleaning process was performed using Pandas.
 | Missing Values | 0 |
 | Duplicate Rows | 0 |
 
----
-
-## 📈 Exploratory Data Analysis
-
-The project performs analysis across several business dimensions.
+## 📈 Exploratory Data Analysis (EDA)
 
 ### 1. Overall Business Metrics
-
-The following key metrics were calculated:
 
 - Total Sales
 - Total Profit
@@ -131,7 +114,7 @@ The following key metrics were calculated:
 
 ### 2. Category Analysis
 
-Sales, profit, quantity, and profit margin were analyzed across:
+Analyzed sales, profit, quantity, and profit margin across:
 
 - Technology
 - Furniture
@@ -139,7 +122,7 @@ Sales, profit, quantity, and profit margin were analyzed across:
 
 ### 3. Regional Analysis
 
-Sales, profit, and quantity were compared across:
+Compared sales, profit, and quantity across:
 
 - West
 - East
@@ -148,81 +131,80 @@ Sales, profit, and quantity were compared across:
 
 ### 4. Product Analysis
 
-The top 10 products were identified based on total sales.
+Identified the top 10 products based on total sales.
 
 ### 5. Customer Analysis
 
-The top 10 customers were identified based on total sales, along with their total profit, quantity, and profit margin.
+Identified the top 10 customers by sales and analyzed their profit, quantity, and profit margin.
 
 ### 6. Discount Analysis
 
-Sales, profit, and quantity were analyzed across different discount levels.
+Analyzed sales, profit, and quantity across different discount levels.
 
 ### 7. Sub-Category Analysis
 
-Sales, profit, quantity, and profit margin were analyzed across product sub-categories.
-
----
+Compared sales, profit, quantity, and profit margin across product sub-categories.
 
 ## 🗄️ SQL Analysis
 
-The dataset was imported into **MySQL** for SQL-based business analysis.
+The dataset was imported into MySQL for SQL-based business analysis.
 
-SQL concepts used include:
+### SQL Concepts Used
 
-- `SELECT`
-- `WHERE`
-- `GROUP BY`
-- `ORDER BY`
+- SELECT and WHERE
+- GROUP BY and ORDER BY
 - Aggregate Functions
-- `CASE`
+- CASE Statements
 - Common Table Expressions (CTEs)
 - Window Functions
-- `RANK()`
+- RANK()
 
-The SQL queries are available in:
+**SQL file:** `sql/sales_analysis.sql`
 
-```text
-sql/sales_analysis.sql
-```
+## 📊 Python Visualizations
 
----
+Matplotlib was used to create the following visualizations:
 
-## 📊 Visualizations
+| Visualization | Purpose |
+|---|---|
+| Monthly Sales Trend | Analyzes sales over time |
+| Sales by Category | Compares category sales |
+| Top 10 Products by Sales | Identifies top-performing products |
+| Sales by Region | Compares regional sales |
+| Discount vs Total Profit | Examines discount levels and profitability |
+| Profit Margin by Sub-Category | Compares sub-category profitability |
 
-The project generates the following visualizations using Matplotlib:
+All generated charts are stored in the `visualization/` directory.
 
-### Monthly Sales Trend
+## 📉 Power BI Dashboard
 
-Shows how sales changed over time.
+An interactive **Sales Overview Dashboard** was developed using Microsoft Power BI to present business performance through KPIs and visualizations.
 
-### Sales by Category
+### Dashboard Features
 
-Compares total sales across product categories.
+- **Total Sales:** Overall sales performance
+- **Total Profit:** Overall profitability
+- **Total Orders:** Distinct order count
+- **Profit Margin:** Profit as a percentage of sales
+- **Monthly Sales Trend:** Tracks sales over time
+- **Sales by Category:** Compares category performance
+- **Profit by Category:** Analyzes category profitability
+- **Sales by Region:** Compares regional sales
+- **Profit by Region:** Compares regional profitability
+- **Sales vs Profit by Region:** Compares sales and profit
+- **Region Slicer:** Filters dashboard visuals interactively
 
-### Top 10 Products by Sales
+### Dashboard Preview
 
-Highlights the products generating the highest sales.
+<!-- Upload your screenshot to a screenshots folder and uncomment this line. -->
 
-### Sales by Region
+<!-- ![Sales Overview Dashboard](screenshots/sales_dashboard.png) -->
 
-Compares sales performance across different regions.
+### Power BI Report
 
-### Discount vs Total Profit
+Download the `.pbix` file from the repository and open it using Microsoft Power BI Desktop.
 
-Shows the relationship between discount levels and total profit in the dataset.
-
-### Profit Margin by Sub-Category
-
-Compares profitability across different product sub-categories.
-
-All generated charts are stored in:
-
-```text
-visualization/
-```
-
----
+**Report file:** `Sales_Customer_Analytics_Dashboard.pbix`
 
 ## 💡 Key Business Insights
 
@@ -236,36 +218,34 @@ Based on the analysis:
 - Bookcases and Supplies also recorded negative profit margins.
 - Higher discount levels were associated with negative total profit in this dataset.
 - Some high-sales customers generated negative profit, showing that sales revenue alone does not indicate customer profitability.
-- Some high-sales products also generated low or negative profit.
+- Some high-sales products generated low or negative profit.
 - The dataset contains **804 unique customers**.
 - The dataset contains **5,111 unique orders**.
 - The average order value is approximately **455.20**.
 
-> **Note:** The discount analysis shows an association between discount levels and profitability in this dataset; it does not by itself establish that discounts caused the losses.
-
----
+**Note:** The discount analysis shows an association between discount levels and profitability. It does not, by itself, establish that discounts caused the losses.
 
 ## ▶️ How to Run the Project
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/sanigasudheer/Sales-Customer-Analytics.git
 ```
 
-### 2. Navigate to the project directory
+### 2. Navigate to the Project Directory
 
 ```bash
 cd Sales-Customer-Analytics
 ```
 
-### 3. Create a virtual environment
+### 3. Create a Virtual Environment
 
 ```bash
 python -m venv .venv
 ```
 
-### 4. Activate the virtual environment
+### 4. Activate the Virtual Environment
 
 For Windows PowerShell:
 
@@ -273,48 +253,50 @@ For Windows PowerShell:
 .venv\Scripts\Activate.ps1
 ```
 
-### 5. Install the required packages
+### 5. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 6. Run data cleaning
+### 6. Run Data Cleaning
 
 ```bash
 python src/data_cleaning.py
 ```
 
-### 7. Run the analysis
+### 7. Run Analysis
 
 ```bash
 python src/analysis.py
 ```
 
-The analysis script generates the visualizations inside:
+The analysis script generates visualizations in the `visualization/` directory.
 
-```text
-visualization/
-```
+### 8. Open the Power BI Dashboard
 
----
+1. Download the `.pbix` report from the repository.
+2. Open it in Microsoft Power BI Desktop.
+3. If prompted, update the data source path to match your local CSV file.
+4. Refresh the data if required.
+
+*Note: Running the MySQL analysis may require a separately configured MySQL server and database.*
 
 ## 📌 Project Highlights
 
 This project demonstrates practical experience with:
 
-- Data loading and preprocessing
-- Data quality checking
-- Pandas data manipulation
-- GroupBy and aggregation
-- Business metric calculation
+- Data cleaning and preprocessing
+- Exploratory Data Analysis
+- Pandas data manipulation and aggregation
 - Customer and product analysis
-- Profitability analysis
-- SQL-based analysis using MySQL
-- Data visualization
+- Sales and profitability analysis
+- SQL querying using MySQL
+- Data visualization using Matplotlib
+- Power BI dashboard development
+- DAX measures and KPI reporting
+- Interactive data filtering
 - Business insight generation
-
----
 
 ## 👩‍💻 Author
 
@@ -322,6 +304,6 @@ This project demonstrates practical experience with:
 
 B.Tech Computer Science and Engineering
 
-**Aspiring Data Analyst**
+Aspiring Data Analyst
 
 **Skills:** Python | SQL | Power BI | Excel | Pandas | Data Visualization
